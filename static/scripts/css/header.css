@@ -1,0 +1,93 @@
+ /* * {
+  text-decoration: none;
+  color: black;
+ } */
+ body{
+  padding-top: 100px;
+  background-color: rgb(243, 255, 245);
+ }
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background-color: rgba(108, 177, 204, 0.751);
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.logo{
+  position: absolute;
+  /* background-color: azure; */
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  top: 13px;
+  left: 20px;
+}
+.logo img{
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.brand-name{
+  position: absolute;
+  left: 40%;
+  top: 20px;
+  font-size: xxx-large;
+  font-family: vivaldi;
+}
+.menu-icon{
+  background-color: rgba(88, 87, 87, 0.7);
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 20px;
+  top: 30px;
+  border-radius: 50%;
+  padding: 4px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-icon span{
+  display: block;
+  width: 4px;
+  height: 4px;
+  background-color: white;
+  border-radius: 50%;
+}
+.menu-icon:active{
+  background-color: rgba(247, 255, 192, 0.552);
+}
+.menu-items{
+  display: none;
+}
+
+.menu-items-display {
+  position: fixed;
+  right: 50px;
+  top: 30px;
+}
+.menu-items-display ul{
+  list-style: none;
+  background-color: rgba(135, 151, 164, 0.827);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 15px;
+  width: 120px;
+  /* height: 130px; */
+  box-sizing: border-box;
+}
+.menu-items-display ul li{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin-top: 8px;
+}
+.menu-items-display ul li:hover{
+  background-color: rgba(179, 179, 179, 0.189);
+}

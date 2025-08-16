@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>
+    
+  </title>
+</head>
+<body>
+  {% include 'header.html' %}
+  {% block content %}
+
+  <h2>Filters</h2>
+
+  {% for type in types %}
+    <div class="type">
+      <a href="{% url 'home' %}?q={{type.type}}">{{type.type}}</a>
+    </div>
+  {% endfor %}
+
+  {% endblock content %}
+</body>

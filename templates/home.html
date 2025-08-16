@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF8">
+  <title>
+    
+  </title>
+  {% load static %}
+  
+</head>
+<body>
+  {% include "header.html" %}
+
+  {% block content %}
+
+  <div class="all"><a href="{% url 'home' %}">All Products</a></div>
+
+  <div class="product-listing">
+    {% for product in products %}
+    {% comment %} <div class="product-image">
+      <img src="{% static 'images/'%}{{product.image}}">
+    </div>
+      <span class="product=price">{{product.price}}</span>
+      <span class="product-name">{{product.name}}</span>
+      <button class="edit-button"><a href="{% url 'edit-product' product.id %}">Edit</a><button>
+      <button class="edit-button"><a href="{% url 'delete' product.id %}">Delete</a><button>
+    <div class="add-to-cart"></div> {% endcomment %}
+
+    <div class="product">
+      <div class="product-image">
+        <img src="{% static 'images/'%}{{product.image}}">
+      </div>
+      <div class="product=price">{{product.price}} Fcfa</div>
+      <div class="product-name">{{product.name}}</div>
+      <div class="button">
+        <button class="edit-button"><a href="{% url 'edit-product' product.id %}">Edit</a></button>
+        <button class="edit-button"><a href="{% url 'delete' product.id %}">Delete</a></button>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+{% endblock content %}
+</body>

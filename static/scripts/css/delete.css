@@ -1,0 +1,31 @@
+.delete-form{
+  border: solid;
+  border-color: rgb(116, 81, 159);
+  border-radius: 10px;
+  background-color: rgb(174, 148, 199);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 60px;
+}
+.buttons{
+  display: flex;
+  justify-content: space-between;
+}
+.delete-button{
+  border: none;
+  background-color: rgb(253, 189, 255) !important;
+  height: 30px;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: xxx-small;
+}
+.back-button{
+  border: none;
+  background-color: rgb(253, 189, 255) !important;
+  height: 30px;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: xxx-small;
+}

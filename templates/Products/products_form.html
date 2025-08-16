@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF8">
+  <title>
+    
+  </title>
+  {% load static %}
+</head>
+<body class="product-body">
+  {% include 'header.html' %}
+
+  {% block content %}
+
+  <form class="product-form" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+      {% comment %} {{form.as_p}} {% endcomment %}
+      {% comment %} {% for field in form %}
+        <label>{{field.label}}</label>
+        {{field}}
+      {% endfor %} {% endcomment %}
+
+      <div class="form-field">
+        <label>Image:</label>
+        {{form.image}}
+      </div>
+
+      <div class="form-field">
+        <label>Product Type:</label>
+        <input type="text" name="producttype" list="type-list">
+        <datalist id="type-list">
+          <select id="product-type">
+            {% for prodtype in producttype %}
+            <option value="{{prodtype.type}}">{{prodtype.type}}</option>
+            {% endfor %}
+          </select>
+        </datalist>
+      </div>
+
+      <div class="form-field">
+        <label>Name:</label>
+        {{form.name}}
+      </div>
+
+      <div class="form-field">
+        <label>Price:</label>
+        {{form.price}}
+      </div>
+    <input class="add-product-button" type="submit" value="Add product">
+  </form>
+  <button class="home-button"><a href="{% url 'home' %}">Home</a></button>
+  {% endblock content %}
+</body>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+  <meta>
+  <title>
+
+  </title>
+  {% load static %}
+
+  <link rel="stylesheet" type="text/css" href="{% static 'scripts/css/header.css' %}?v={% now 'U'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'scripts/css/home.css' %}?v={% now 'U'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'scripts/css/product.css' %}?v={% now 'U'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'scripts/css/delete.css' %}?v={% now 'U'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'scripts/css/login.css' %}?v={% now 'U'%}">
+
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <a href="{% url 'home' %}"><img src="{% static 'images/avatars/mist 2.png' %}"></a>
+    </div>
+    <div class="brand-name"> 
+      Mist
+    </div>
+    <div class="menu-icon">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menu-items js-menu-items">
+      <ul>
+        {% if request.user.is_authenticated %}
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        <li><a href="{% url 'edit-user' request.user.id %}">Profile</a></li>
+        {% else %}
+          <li><a href="{% url 'login' %}">Login</a></li>
+        {% endif %}
+        <li><a href={% url 'filters' %}>Filters</a></li>
+        {% comment %} <li>Chat</li> {% endcomment %}
+        {% if request.user.is_staff %}
+          <li><a href="{% url 'add-product' %}">add product</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+  <script>
+    const button = document.querySelector('.menu-icon');
+
+    button.addEventListener('click', ()=>{
+      let menu = document.querySelector('.js-menu-items');
+      console.log(menu.classList.contains('menu-items'));
+
+      if(menu.classList.contains('menu-items')){
+        menu.classList.replace('menu-items', 'menu-items-display');
+      }else{
+        menu.classList.add('menu-items');
+        menu.classList.remove('menu-items-display');
+      }
+      console.log(menu.classList.contains('menu-items'))
+    });
+  </script>
+</body>

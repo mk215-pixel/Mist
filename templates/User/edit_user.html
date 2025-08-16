@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF8">
+  <title>
+    
+  </title>
+  {% load static%}
+</head>
+<body>
+  {% include 'header.html' %}
+
+  {% block content %}
+    <button class="home-button"><a href="{% url 'home' %}">Home</a></button>
+
+    <form class="edit-form" method="POST">
+      {% csrf_token %}
+        {{form.as_p}}
+        
+        <div class="register-button">
+          <input class="edit-user-button" type="submit" value="Edit user">
+        </div>
+    </form>
+    {% comment %} <div><a href="{% url 'delete-user' request.user.id %}">Delete account</a></div> {% endcomment %}
+  {% endblock content %}
+</body>

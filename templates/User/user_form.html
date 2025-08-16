@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF8">
+  <title>
+    
+  </title>
+  {% load static %}
+</head>
+<body class="product-body">
+  {% include 'header.html' %}
+
+  {% block content %}
+    {% if page == 'login' %}
+      <form class="login-form" method='POST' action="">
+        {% csrf_token %}
+          <div class="username">
+            <label>Username:</label>
+            <input name="username" type="text" placehorlder="Enter username">
+          </div>
+          <div class="password">
+            <label>Password:</label>
+            <input name="password" type="password" placehorlder="Enter password">
+          </div>
+          <div class="login-button">
+            <input type="submit" value="Login">
+          </div>
+          <div>
+            Don't have an account ? <a href="{% url 'add-user' %}"><span class="register">Register</span></a>
+          </div>
+      </form>
+      
+    {% else %}
+      <form class="register-form" method="POST">
+        {% csrf_token %}
+          {{form.as_p}}
+          <div class="register-button">
+            <input class="add-user-button" type="submit" value="Register user">
+          </div>
+      </form>
+
+    {% endif %}
+
+    {% if messages %}
+      {% for message in messages %}
+        <div class="error-message">{{message}}</div>
+      {% endfor %}
+    {% endif %}
+    <button class="home-button"><a href="{% url 'home' %}">Home</a></button>
+  {% endblock content %}
+</body>

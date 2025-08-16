@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF8">
+  <title>
+    
+  </title>
+  {% load static %}
+</head>
+<body class="product-body" >
+  {% include 'header.html' %}
+
+  {% block content %}
+    <form class="delete-form" method= "POST">
+      {% csrf_token %}
+      <span class="delete-text">Are you sure you want to delete {{object}} ?</span>
+      <div class="buttons">
+        <input class="delete-button" type="submit" value="Delete">
+        <button class="back-button" ><a href="{{ request.META.HTTP_REFERER }}">Cancel</a></button>
+      </div>
+    </form>
+  {% endblock content %}
+</body>

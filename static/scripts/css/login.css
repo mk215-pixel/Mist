@@ -1,0 +1,94 @@
+.login-form{
+  border: solid;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 300px;
+  height: 140px;
+  border-color: rgb(116, 81, 159);
+  border-radius: 10px;
+  background-color: rgb(174, 148, 199);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+}
+.login-form input{
+  padding: 5px;
+  border: none;
+  border-radius: 6px;
+  padding-left: 5px;
+  background-color: rgba(207, 232, 255, 0.825);
+}
+.login-button{
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  justify-content: center;
+}
+.login-button input{
+  height: 30px !important;
+  width: 50px !important;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: xxx-smaller !important;
+  background-color: rgb(253, 189, 255) !important;
+  border-radius: 10px !important;
+  padding: 6px !important;
+  box-sizing: border-box !important;
+}
+
+
+.register{
+  color: rgba(57, 251, 225, 0.829);
+  text-decoration: underline;
+}
+.register-form{
+  border: solid;
+  /* height: 350px; */
+  padding: 15px;
+  border-radius: 12px;
+  background-color: rgb(174, 148, 199);
+  border-color: rgb(116, 81, 159);
+}
+.register-form input{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  padding: 2px;
+  padding-left: 5px;
+  background-color: rgba(240, 248, 255, 0.823);
+}
+.add-user-button{
+  height: 30px;
+  background-color: rgb(253, 189, 255) !important;
+  padding: 8px !important;
+  justify-self: center;
+  border-radius: 11px !important;
+  font-family: Arial, Helvetica, sans-serif !important;
+  font-size: xx-smaller !important;
+}
+.register-button{
+  display: flex;
+  flex-direction: row;
+  min-width: 400px;
+  justify-content: center;
+}
+
+.edit-form{
+  border: solid;
+  padding: 15px;
+  border-radius: 12px;
+  background-color: rgb(174, 148, 199);
+  border-color: rgb(116, 81, 159);
+  margin-top: 20px;
+  height: 300px;
+}
+.edit-user-button{
+  border: none;
+  background-color: rgb(253, 189, 255) !important;
+  height: 30px;
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: xxx-small;
+  justify-self: center;
+}
